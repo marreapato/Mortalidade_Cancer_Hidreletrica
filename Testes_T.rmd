@@ -1,0 +1,116 @@
+---
+title: "Testes de diferença da média"
+author: "Lucas Rabelo"
+output: pdf_document
+---
+
+```{r echo=FALSE,results='asis',warning=FALSE,message=FALSE,error=FALSE,include=FALSE}
+####################################
+library(fmsb)
+library(stringr)
+library(tidyverse)
+library(ggthemes)
+library(readODS)
+#######################################3
+setwd("~/Documents")
+novmort <- read_ods("novmort.ods")#
+#######################
+copi <- novmort
+copi <- copi[,-38]
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=T,paired=F)
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+
+### **Código referente ao teste da diferença de variâncias F de snedecor**
+
+ O teste para variância foi realizado para posteriormente fazer a realização do teste para diferença das médias, o resultado do teste F de Snedecor foi no entanto não rejeitar a hipótese nula, a qual consiste em afirmar que a razão das varianças é igual a 1.
+
+```{r echo=FALSE,warning=FALSE}
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+```
+
+
+### **Código referente ao teste da diferença de médias assumindo igualdade de variâncias**
+
+
+ Esse teste foi realizado para analisar os resultados assumindo a igualdade de variâncias provida pelo teste F de Snedecor, houve uma diferença significativa para o resultado das médias, sendo a idade média de óbito dos trabalhadores expostos a eletricidade menor do que a dos não expostos.
+
+```{r echo=FALSE,warning=FALSE}
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=T,paired=F)
+```
+
+### **Código referente ao teste da diferença de médias assumindo diferença de variâncias**
+
+ Apenas por via de simulação foi feito o teste assumindo variâncias diferentes, o p-valor foi maior porém o nível de confiança se manteve.
+
+```{r echo=FALSE,warning=FALSE}
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+
+
+
+\ ![A marcação no boxplot refere-se ao valor da idade média.](/home/lucas/Desktop/Boxplot_média_obito.jpeg)
+**Figura 1**-*A marcação no boxplot refere-se ao valor da idade média de óbito.*
+
+ O boxplot ilustra a idade de óbito de acordo com a exposição a eletricidade na empresa, a mediana e a média da idade de óbito dos trabalhadores expostos a eletricidade é menor do que a dos não expostos.
+
+## Cuidados
+
+ Todos os trabalhadores expostos a eletricidade estavam expostos a uma atividade de alta periculosidade, ao filtrar o grupo antagônico para os casos de neoplasia e por periculosidade nos casos de neoplasia a diferença significativa das idades médias de óbito deixou de aparecer. Entretanto se manteve ao considerar todos os casos e filtrar o grupo não exposto por periculosidade
+
+\ 
+
+## Teste com não expostos em alta periculosidade
+
+ Os expostos a eletricidade tiveram uma idade média de óbito menor, com nível de significância atingido
+
+```{r echo=FALSE,results='markup',warning=FALSE,message=FALSE,error=FALSE}
+attach(copi)
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não",`TRABALHANDO EM ÁREA PERICULOSA (COM ELETRICIDADE DIRETA OU INDIRETAMENTE) `=="Sim")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+
+## Teste com não expostos em baixa periculosidade
+
+ Os expostos a eletricidade tiveram uma idade média de óbito menor, com nível de significância atingido e um p-valor ainda menor
+
+```{r echo=FALSE,results='markup',warning=FALSE,message=FALSE,error=FALSE}
+attach(copi)
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não",`TRABALHANDO EM ÁREA PERICULOSA (COM ELETRICIDADE DIRETA OU INDIRETAMENTE) `=="Não")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+  
+## Teste apenas nos casos de Neoplasia
+```{r echo=FALSE,results='markup',warning=FALSE,message=FALSE,error=FALSE}
+attach(copi)
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim",NEOPLASIA=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não",NEOPLASIA=="Sim")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+
+## Teste apenas nos casos de Neoplasia com não expostos em baixa periculosidade
+```{r echo=FALSE,results='markup',warning=FALSE,message=FALSE,error=FALSE}
+attach(copi)
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim",NEOPLASIA=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não",NEOPLASIA=="Sim",`TRABALHANDO EM ÁREA PERICULOSA (COM ELETRICIDADE DIRETA OU INDIRETAMENTE) `=="Não")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
+
+
+## Teste apenas nos casos de Neoplasia com não expostos em alta periculosidade
+```{r echo=FALSE,results='markup',warning=FALSE,message=FALSE,error=FALSE}
+attach(copi)
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim",NEOPLASIA=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não",NEOPLASIA=="Sim",`TRABALHANDO EM ÁREA PERICULOSA (COM ELETRICIDADE DIRETA OU INDIRETAMENTE) `=="Sim")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+```
