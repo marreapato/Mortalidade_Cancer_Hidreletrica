@@ -1,0 +1,15 @@
+---
+title: "Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011."
+author: "Lucas Rabelo"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+
+
+ 
+
+
+
+
