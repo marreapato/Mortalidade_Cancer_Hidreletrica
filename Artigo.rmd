@@ -1,14 +1,43 @@
 ---
-title: "Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011."
-author: "Lucas Rabelo"
-output:
-  pdf_document: default
-  html_document: default
+title: Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011.
+author:
+  - name: Lucas Rabelo
+    affiliation: Affiliation
+    address:
+    - line 1
+    - line 2
+    email:  author1@work
+  - name: Gecynalda Gomes
+    affiliation: Affiliation
+    address:
+    - line 1
+    - line 2
+    email:  author2@work
+abstract: >
+  An abstract of less than 150 words.
+preamble: |
+  % Any extra LaTeX you need in the preamble
+output: rticles::rjournal_article
 ---
 
+\bibliography{RJreferences}
 
+## Resumo:
 
- 
+###### Palavras-chave:
+
+# Introdução
+
+# Metodologia
+
+# Resultados
+
+# Discussão
+
+# Referências
+
+# Anexo
+
 
 
 
