@@ -14,7 +14,7 @@ author:
     - line 2
     email:  author2@work
 abstract: >
-  One important paper published in 1979 by Wertheimer and Leeper have shown a positive association between extremely low frequency magnetic fields (Elf mf) and infant leukemia, which caused a wave of studies investigating the risks between the exposure to Elf mf and the development of diseases, and the subsequent classification of exposure to these fields as 2B(Possibly carcinogenic) by IARC.
+  After one important paper published in 1979 by Wertheimer and Leeper have shown a positive association between extremely low frequency magnetic fields (elf mf) and infant leukemia, a wave of studies investigating the risks between the exposure to elf mf and the development of diseases, caused the subsequent classification of exposure to these fields as 2B(Possibly carcinogenic) by IARC.
 output: rticles::rjournal_article
 ---
 
