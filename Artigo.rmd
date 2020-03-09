@@ -14,7 +14,7 @@ author:
     - line 2
     email:  author2@work
 abstract: >
- After an important paper published in 1979 by Wertheimer and Leeper have shown a positive association between extremely low-frequency magnetic fields (elf mf) and infant leukemia, a wave of studies investigating the risks between the exposure to elf mf and the development of diseases caused the subsequent classification of exposure to these fields as 2B (Possibly carcinogenic) by the International Agency for Research on Cancer (IARC). This study aims to analyze occupational exposure to elf mf in a hydroeletric power facility located in Brazil and gather more data for those researching about the risks that this kind of exposure may have as a co-carcinogenic or carcinogenic factor. A database of 1253
+ After an important paper published in 1979 by Wertheimer and Leeper have shown a positive association between extremely low-frequency magnetic fields (elf mf) and infant leukemia, a wave of studies investigating the risks between the exposure to elf mf and the development of diseases caused the subsequent classification of exposure to these fields as 2B (Possibly carcinogenic) by the International Agency for Research on Cancer (IARC). This study aims to analyze occupational exposure to elf mf in a hydroelectric power facility located in Brazil and gather more data for those researching about the risks that this kind of exposure may have as a co-carcinogenic or carcinogenic factor. A database of 1253
 output: rticles::rjournal_article
 ---
 
