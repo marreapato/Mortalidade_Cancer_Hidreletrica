@@ -30,7 +30,7 @@ library(rticles)
 ```
 
 
-## Resumo:
+**Resumo:** Depois da publicação de um artigo por Wertheimer e Leeper
 
 ### Palavras-chave: *Hidrelétrica, Câncer, Mortality Odds Ratio, CEM, Estatística.*
 
