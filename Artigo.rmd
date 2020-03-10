@@ -42,6 +42,8 @@ library(rticles)
 
 # Discussão
 
+# Conclusão
+
 # Referências
 
 # Anexo
