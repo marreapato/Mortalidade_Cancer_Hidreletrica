@@ -30,7 +30,7 @@ library(rticles)
 ```
 
 
-**Resumo:** Depois da publicação de um artigo por Wertheimer e Leeper em 1979 ter demonstrado uma associação positiva entre a exposição a campos eletromagnéticos de baixa frequência(CEM) e leucemia infantil, subsequentemente estudos investigando a exposição a tais campos e o desenvolvimento de doenças, levaram a classificação dos mesmos para 2B(possivelmente carcinogênicos) pela IARC. Esse estudo tem como objetivo analisar as mortes por neoplasia maligna
+**Resumo:** Depois da publicação de um artigo por Wertheimer e Leeper em 1979 ter demonstrado uma associação positiva entre a exposição a campos eletromagnéticos de baixa frequência(CEM) e leucemia infantil, subsequentemente estudos investigando a exposição a tais campos e o desenvolvimento de doenças, levaram a classificação dos mesmos para 2B(possivelmente carcinogênicos) pela IARC. Esse estudo tem como objetivo analisar mortes por neoplasia maligna em uma companhia hidrelétrica brasileira e os possiveis riscos que a exposição ocupacional a CEM possa ter como fator carcinogênico ou co-carcinogênico. Um banco de dados de 1235 trabalhadores falecidos
 
 ### Palavras-chave: *Hidrelétrica, Câncer, Mortality Odds Ratio, CEM, Estatística.*
 
