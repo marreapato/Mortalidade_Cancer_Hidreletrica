@@ -36,7 +36,7 @@ library(rticles)
 
 # Introdução
 
- Câncer de mama, próstata, cérebro e leucemia são apenas dos algumas das neoplasias que tiveram seu estudo direcionado a problemática da exposição a campos eletro magnéticos de baixa frequência(CEM), 
+ Câncer de mama, próstata, cérebro e leucemia são apenas dos algumas das neoplasias que tiveram seu estudo direcionado a problemática da exposição a campos eletro-magnéticos de baixa frequência $\!\!^9$ \ $\!\!^3$ também chamados de CEM , 
 
 
 # Metodologia
