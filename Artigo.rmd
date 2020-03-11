@@ -36,6 +36,9 @@ library(rticles)
 
 # Introdução
 
+ Câncer de mama, próstata, cérebro e leucemia são apenas dos algumas das neoplasias que tiveram seu estudo direcionado a problemática da exposição a campos eletro magnéticos de baixa frequência(CEM), 
+
+
 # Metodologia
 
 # Resultados
@@ -46,7 +49,57 @@ library(rticles)
 
 # Referências
 
-# Anexo
 
+1. FARIA, Marcília de A M; Almeida, José Wilson R; Zanetta, Dirce M T. Mortalidade por câncer na
+região urbano-industrial da Baixada Santista, SP (Brasil). Revista de Saúde Pública. São Paulo:
+Universidade de São Paulo, Volume 33, Número 3, p.255-61. 1999.
+
+2. [IARC] Iarc monographs on the identification of carcinogenic hazards to humans. Agents Classified
+by the IARC Monographs, Volumes 1-125, 29/11/2019. Disponível em:
+<https://monographs.iarc.fr/list-of-classifications/>. Acesso em: 08/12/2019.
+
+3. Mateș, Dana; Calotă, Violeta Claudia, Oțelea, Marina Ruxandra. et al. Prostate cancer: an
+occupational hazard in Romania?.Romanian Journal of Occupational Medicine. Romania. Volume 70,
+N° 1, p.38-45. 2019.
+
+4. Marcilio, Izabel; Habermann, Mateus; Gouveia, Nelson. Extremely low-frequency magnetic fields
+and health effects: literature review. Revista Brasileira de Epidemiologia. Universidade de São Paulo:
+Faculdade de Medicina, Volume 12, Número 2, p.1-19. 2009.
+
+5. Mattos, Inês E.; Koifman Sérgio. Mortalidade por câncer em trabalhadores de companhia geradora
+de eletricidade do Estado de São Paulo, Brasil. Rev. Saúde Pública. Rio de Janeiro: FIOCRUZ,
+Volume 30, Número 6, p. 564-575. 1996.
+
+6. MIETTINEN, OLLI S.; WANG, JUNG-DER. An alternative to the proportionate mortality ratio.
+American Journal of Epidemiology. USA: The Johns Hopkins University School of Hygiene and
+Public Health, Volume 114, N° 1, p. 144-148. 1981.
+
+7. Turner, Michelle C.; Benke, Geza; Bowman, Joseph D. et al. Occupational exposure to extremely
+low frequency magnetic fields and brain tumour risks in the INTEROCC study. Cancer Epidemiol
+Biomarkers Prev. [S.l.], Volume 23, N° 9, p. 1863-1872. 2014.
+
+8. Sorahan T. M. Cancer incidence in UK electricity generation and transmission workers,
+1973–2015. Occupational Medicine. UK: University of Birmingham, Volume 69, N° 5, p. 342-351. 2019.
+
+9. Grundy, Anne; Harris, Shelley A.; Demers, Paul A. et al. Occupational exposure to magnetic fields
+and breast cancer among Canadian men. Cancer Medicine. Canada: Canadian Cancer Registries
+Epidemiology Research Group, Volume 5, N° 3, p. 586-596. 2016.
+
+10. Håkansson, N.; Floderus, B.; Gustavsson, P. et al. Cancer incidence and magnetic field exposure
+in industries using resistance welding in Sweden. occup environ med. Sweden: Karolinska Institutet,
+Volume 59, N° 7, p. 481-486. 2002.
+
+11. [INCA] Atlas On-line de Mortalidade. Mortalidade-INCA, c1996. Tabulador. Disponível em:
+<https://mortalidade.inca.gov.br/MortalidadeWeb/>. Acesso em: 08/12/2019.
+
+12. Nakazawa, Minato. fmsb: Functions for Medical Statistics Book with some Demographic Data.
+CRAN-R, 2018. Disponível em: <https://cran.r-project.org/web/packages/fmsb/index.html>. Acesso
+em: 08/12/2019.
+
+13. Marcílio, Izabel; Gouveia, Nelson; Filho, Mário L. P. et al. Adult mortality from leukemia, brain cancer, amyotrophic lateral sclerosis and magnetic fields from power lines: a case-control study in Brazil. Revista Brasileira de Epidemiologia. São Paulo: Universidade de São Paulo,Volume 14, N° 4, p. 580-588. 2011.
+
+14. Itskovich I.; Roudebush B. Using re-sampling methods in mortality studies. PLoS One.United States of America, Volume 5, N°8, p. 1-6. 2010.
+
+# Anexo
 
 
