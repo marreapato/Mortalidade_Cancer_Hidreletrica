@@ -48,6 +48,8 @@ library(rticles)
 
 # Metodologia
 
+ O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2012 referentes ao diagnóstico de óbito em 1.130 homens e 123 mulheres, empregados em uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, sendo o foco do estudo um total de 254 indivíduos(39 do sexo feminino e 215 do masculino) que vieram a óbito por neoplasia maligna,
+
 # Resultados
 
 # Discussão
@@ -108,4 +110,3 @@ em: 08/12/2019.
 14. Itskovich I.; Roudebush B. Using re-sampling methods in mortality studies. PLoS One.United States of America, Volume 5, N°8, p. 1-6. 2010.
 
 # Anexo
-
