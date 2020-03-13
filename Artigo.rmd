@@ -48,7 +48,13 @@ library(rticles)
 
 # Metodologia
 
- O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2011, referentes ao diagnóstico de óbito em empregados, de uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, dentre os empregados 1.130 foram do sexo masculino e 123 do feminino. O foco do estudo no entanto, está em um total de 254 indivíduos(39 do sexo feminino e 215 do masculino), em que a causa principal de falecimento se deu por neoplasia maligna, dos quais 209 foram classificados como não expostos e um total de 42 como afetados pela exposição, em toda a hidrelétrica 241 trabalhadores foram classificados como expostos em contrapartida a 995 não expostos, apesar de ser criticada por alguns estudos, devido a falta de informações sobre o estilo de vida dos trabalhadores e a dificuldade para medir a exposição $\!\!^4$, a classificação referente a exposição aos cem se deu por meio da avaliação binária(sim, não).
+ O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2011, referentes ao diagnóstico de óbito em empregados, de uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, dentre os empregados 1.130 foram do sexo masculino e 123 do feminino. O foco do estudo no entanto, está em um total de 254 indivíduos(39 do sexo feminino e 215 do masculino), em que a causa principal de falecimento se deu por neoplasia maligna, dos quais 209 foram classificados como não expostos e um total de 42 como afetados pela exposição, em toda a hidrelétrica 241 trabalhadores foram classificados como expostos em contrapartida a 995 não expostos. Devido a falta de informações sobre o estilo de vida dos trabalhadores e a dificuldade para medir a exposição $\!\!^4$ \ $\!\!^5$ \ $\!\!^1$ $\!\!^3$, é comum que estudos utilizem as ocupações $\!\!^5$ para realizar a classificação referente a exposição aos CEM, assim como nesse estudo em que os empregados foram classificados de forma binária, quanto a exposição.
+ 
+ Para verificar o comportamento do óbito por neoplasia e exposição a eletricidade, foi calculada a MOR $\!\!^5$ \ $\!\!^6$ (Mortality Odds Ratio), a qual parafraseando Miettinen e Wang(1980, p.146, tradução nossa)" é obtida pela razão das chances de exposição pela causa de óbito", como o software R(versão 3.6.1) foi utilizado para o cálculo da citada estatística, vale ressaltar que para calcular a mesma foi usada a função que calcula as odds ratios, presente na biblioteca FMSB $\!\!^1\!^2$, o nível de confiança a ser considerado neste artigo é de 95%.
+ 
+ 
+ 
+ 
  
  
  
