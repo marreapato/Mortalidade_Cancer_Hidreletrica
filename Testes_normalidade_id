@@ -1,0 +1,22 @@
+library(fmsb)
+library(stringr)
+library(tidyverse)
+library(ggthemes)
+library(readODS)
+#######################################3
+setwd("~/Documents")
+novmort <- read_ods("novmort.ods")#
+#######################
+copi <- novmort
+copi <- copi[,-38]
+eletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Sim")
+neletric <- copi %>% filter(`TRABALHANDO DIRETAMENTE COM ELETRICIDADE`=="Não")
+var.test(as.numeric(eletric$`IDADE DO OBITO`), as.numeric(neletric$`IDADE DO OBITO`), alternative = "two.sided")#teste de comparação das variancias F
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=T,paired=F)
+t.test(y=as.numeric(eletric$`IDADE DO OBITO`),x=as.numeric(neletric$`IDADE DO OBITO`),mu=0,alt="two.sided",var.eq=F,paired=F)
+
+#TESTE DE NORMALIDADE
+
+shapiro.test(as.numeric(eletric$`IDADE DO OBITO`))#nao normal
+
+shapiro.test(as.numeric(neletric$`IDADE DO OBITO`))#normal
