@@ -48,7 +48,9 @@ library(rticles)
 
 # Metodologia
 
- O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2012 referentes ao diagnóstico de óbito em 1.130 homens e 123 mulheres, empregados em uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, sendo o foco do estudo um total de 254 indivíduos(39 do sexo feminino e 215 do masculino) que vieram a óbito por neoplasia maligna,
+ O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2011, referentes ao diagnóstico de óbito em empregados, de uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, dentre os empregados 1.130 foram do sexo masculino e 123 do feminino. O foco do estudo no entanto, está em um total de 254 indivíduos(39 do sexo feminino e 215 do masculino), em que a causa principal de falecimento se deu por neoplasia maligna, dos quais 209 foram classificados como não expostos e um total de 42 como afetados pela exposição, em toda a hidrelétrica 241 trabalhadores foram classificados como expostos em contrapartida a 995 não expostos.
+ 
+ 
 
 # Resultados
 
