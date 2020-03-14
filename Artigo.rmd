@@ -52,24 +52,22 @@ library(rticles)
  
  Para verificar o comportamento do óbito por neoplasia e exposição a eletricidade, foi calculada a MOR $\!\!^5$ \ $\!\!^6$ (Mortality Odds Ratio), a qual parafraseando Miettinen e Wang(1980, p.146, tradução nossa)" é obtida pela razão das chances de exposição pela causa de óbito", como o software R(versão 3.6.1) foi utilizado para o cálculo da citada estatística, vale ressaltar que para calcular a mesma foi usada a função que calcula as odds ratios, presente na biblioteca FMSB $\!\!^1\!^2$, o nível de confiança a ser considerado neste artigo é de 95%.
  
- Para a análise do comportamento de óbito por neoplasia e a exposição a eletricidade, houve a criação de três grupos, o Grupo A contendo todos os trabalhadores que foram a óbito por neoplasia expostos a eletricidade (40 do sexo masculino e 2 do feminino), o Grupo B com os trabalhadores não expostos que foram a óbito por neoplasia e alocados numa área de alta periculosidade (22 do sexo masculino) e o Grupo C contendo os trabalhadores que foram a óbito por neoplasia sem contato direto com eletricidade e que desempenhavam ocupações de baixa periculosidade(150 do sexo masculino e 37 do feminino). Também foi utilizado um método *bootstrap*, inspirado no proposto por Itskovich e Roudebush $\!\!^1$ $\!\!^4$, este método foi aplicado com 10.000 reamostragens no grupo A e em todos os indivíduos que faleceram por câncer e não possuiam contato com a eletricidade independentemente da periculosidade do trabalho realizado. 
+ Para a análise do comportamento de óbito por neoplasia e a exposição a eletricidade, houve a criação de três grupos, o Grupo A contendo todos os trabalhadores que foram a óbito por neoplasia expostos a eletricidade (40 do sexo masculino e 2 do feminino), o Grupo B com os trabalhadores não expostos que foram a óbito por neoplasia e alocados numa área de alta periculosidade (22 do sexo masculino) e o Grupo C contendo os trabalhadores que foram a óbito por neoplasia sem contato direto com eletricidade e que desempenhavam ocupações de baixa periculosidade(150 do sexo masculino e 37 do feminino). 
+ 
+ Devido a alta amplitude dos intervalos de confiança ao calcular a MOR da maneira em que a medida é tradicionalmente calculada, em virtude do baixo número de casos em indivíduos expostos a eletricidade classificados com neoplasia maligna, para diminuir a largura dos intervalos foi aplicado um método *bootstrap*, inspirado no proposto por Itskovich e Roudebush $\!\!^1$ $\!\!^4$, esta técnica foi aplicada com 10.000 reamostragens considerando grupo A e todos os indivíduos que faleceram por câncer e não possuiam contato com a eletricidade independentemente da periculosidade do trabalho realizado. 
  
  Na tentativa de identificar anomalias nas chances de óbito da hidrelétrica, houve a comparação entre a MOR da hidrelétrica e da população brasileira que foi a óbito por neoplasia maligna no período de 1985 até 2012, período este utilizado devido a leve presença de trabalhadores que tiveram o óbito registrado em tal ano, os dados para o Brasil estão disponibilizados na base de dados do INCA(Instituto Nacional do Câncer) $\!\!^1$ $\!\!^1\!^1$, a sigla MORH foi utilizada para se referir a MOR da hidrelétrica e MORB a da parcela da população brasileira conveniente para comparação, a análise comparativa foi feita considerando o sexo e as faixas etárias de óbito dos trabalhadores.
- 
- 
- 
- 
- 
- 
 
 # Resultados
+
+
+ 
 
 # Discussão
 
 # Conclusão
 
 # Referências
-
 
 1. FARIA, Marcília de A M; Almeida, José Wilson R; Zanetta, Dirce M T. Mortalidade por câncer na
 região urbano-industrial da Baixada Santista, SP (Brasil). Revista de Saúde Pública. São Paulo:
