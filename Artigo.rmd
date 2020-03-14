@@ -136,5 +136,17 @@ em: 08/12/2019.
 ![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela_boot_trad_unificada (1).pdf"){height=800px}
 
 
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\fem_cancer (3).pdf"){height=800px}
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela-mor-mascu (1).pdf"){height=800px}
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\2mor.pdf"){height=800px}
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\3mor.pdf"){height=800px}
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\4mor.pdf"){height=800px}
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\5mor.pdf"){height=800px}
+
 
 
