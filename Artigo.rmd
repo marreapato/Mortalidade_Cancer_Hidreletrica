@@ -68,7 +68,7 @@ library(rticles)
 
 # Resultados
 
- No método tradicional**(Tabela 1 em anexo)** apenas foi encontrada uma elevada chance de óbito para o câncer de esôfago(MOR=5,50; IC=1,06-28,33; P=0,0235), enquanto no método bootstrap**(Tabela 1 em anexo)**  a elevada chance de óbito se manteve para o câncer de esôfago (MORBoot=6,73; IC=1,74- 16,67; P<0,0001),houve também identificação de altas chances neste método para as neoplasias de bexiga(MORBoot=6,03; IC=2,62-10,81; P<0,0001), linfoma não hodgkin (MORBoot=6,03; IC=2,62-10,81; P<0,0001) e osso (MORBoot=3,95; IC=2,62-5,26; P<0,0001).
+ No método tradicional**(Tabela 1 em anexo)**, aplicado para o grupo A e dos trabalhadores falecidos por neoplasia sem contato com a eletricidade, apenas foi encontrada uma elevada chance de óbito para o câncer de esôfago(MOR=5,50; IC=1,06-28,33; P=0,0235), enquanto no método bootstrap**(Tabela 1 em anexo)**  a elevada chance de óbito se manteve para o tal(MORBoot=6,73; IC=1,74- 16,67; P<0,0001), houve também identificação de altas chances neste método para as neoplasias de bexiga(MORBoot=6,03; IC=2,62-10,81; P<0,0001), linfoma não hodgkin (MORBoot=6,03; IC=2,62-10,81; P<0,0001) e osso (MORBoot=3,95; IC=2,62-5,26; P<0,0001).
 
  Para os trabalhadores do grupo A em relação ao grupo C ao considerar a MOR**(Tabela 2 em anexo)**, a chance de óbito mais elevada permanece sendo pelo câncer de esôfago(MOR=7,42;IC=1,19-45,99, P=0,0128) para os empregados do grupo A, entretanto o intervalo de confiança foi muito largo, devido aos poucos casos referente a tal neoplasia nos grupos analisados, não houve nenhuma chance de óbito estatisticamente significante encontrada na comparação dos grupos A e B.
  
@@ -132,3 +132,9 @@ em: 08/12/2019.
 14. Itskovich I.; Roudebush B. Using re-sampling methods in mortality studies. PLoS One.United States of America, Volume 5, N°8, p. 1-6. 2010.
 
 # Anexo
+
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela_boot_trad_unificada (1).pdf"){height=800px}
+
+
+
+
