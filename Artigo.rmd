@@ -72,6 +72,7 @@ library(rticles)
 
  Para os trabalhadores do grupo A em relação ao grupo C ao considerar a MOR**(Tabela 2 em anexo)**, a chance de óbito mais elevada permanece sendo pelo câncer de esôfago(MOR=7,42;IC=1,19-45,99, P=0,0128) para os empregados do grupo A, entretanto o intervalo de confiança foi muito largo, devido aos poucos casos referente a tal neoplasia nos grupos analisados, não houve nenhuma chance de óbito estatisticamente significante encontrada na comparação dos grupos A e B.
  
+ 
  Para a população brasileira do sexo feminino e as trabalhadoras da hidrelétrica**(Tabela 3 em anexo)**, há uma leve sugestão de uma chance maior de óbito para o câncer de ovário na hidrelétrica (MORH=16,00; IC=1,17-218,86; P=0,0114) em relação ao país (MORB=0,85; IC=0,83-0,87; P<0,0001) na faixa etária dos 70 a 79 anos, porém com uma alta amplitude no intervalo de confiança referente para MORH da companhia. Para a população brasileira e empregados do sexo masculino**(Tabela 4 em anexo)**, há a sugestão de uma maior chance de óbito para o câncer de laringe na hidrelétrica (MORH=7,90; IC=1,49-41,98; P=0,0040) em comparação ao Brasil (MORB=1,18; IC=1,15-1,19; P<0,0001) na faixa etária dos 60 a 69 anos. 
 
 
@@ -135,10 +136,12 @@ em: 08/12/2019.
 
 ![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela_boot_trad_unificada (1).pdf"){height=800px}
 
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\tabela_grpA_C (3).pdf"){height=1200px,width=2000px}
+
 
 ![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\fem_cancer (3).pdf"){height=800px}
 
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela-mor-mascu (1).pdf"){height=800px}
+![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela-mor-masc1.pdf"){height=800px}
 
 ![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\2mor.pdf"){height=800px}
 
