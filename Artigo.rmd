@@ -92,6 +92,10 @@ library(rticles)
  
 # Conclusão
 
+ Este estudo apresenta limitações similares a outros realizados como e bastante similar a um referente a exposição ocupacional a campos eletromagnéticos e câncer de mama em homens canadenses $\!\!^9$, em que a classificação de exposição foi feita considerando os indivíduos como expostos e não expostos podendo existir erros de classificação, além do grande número de índividuos em que não foi possível identificar a exposição, há também a dificuldade em afirmar uma chance maior de óbito se dá pelo fato da ocorrência do baixo número de casos, tal empecilho é responsável por gerar largos intervalos de confiança . Porventura, a falta de meios biológicos para determinar com maior precisão a exposição a eletricidade pode influenciar nos resultados finais, contudo mais estudos de longa escala e com um maior número de casos são necessários para definir os reais efeitos da exposição ocupacional a campos eletromagnéticos na mortalidade por câncer.
+ 
+ Apesar das limitações, o presente estudo contribui com a apresentação de um método *bootstrap*
+
 # Referências
 
 1. FARIA, Marcília de A M; Almeida, José Wilson R; Zanetta, Dirce M T. Mortalidade por câncer na
