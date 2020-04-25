@@ -10,20 +10,9 @@ ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Bra
 
 #definindo a logica do servidor requerida para realizar evento
 
-server <- function(input,output){
+#server <- function(input,output){
   
-  output$distPlot <- renderPlot({
-    
-    x <- faithful$waiting
-    bins <- seq(min(x),max(x),length.out = input$bins+1)
-    
-    hist(x,breaks = bins,col="red",border="white",
-         xlab="tempo para erupção",
-         ylab="histograma do tempo de espera")
-  })
-  
-}
+#}
 
 #rodando app
-shinyApp(ui,server)
-
+#shinyApp(ui,server)
