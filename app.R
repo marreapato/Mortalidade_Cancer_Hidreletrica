@@ -2,6 +2,13 @@
 
 library(shiny)
 
+setwd('/home/lucas/Desktop/app_cancer')
+
+#Rodando banco dos homens e arrumando
+
+hbrasil <- read.csv2("Homensbr.csv",header = F)
+
+
 #definindo interface
 
 ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Brasil."),
@@ -19,4 +26,4 @@ server <- function(input,output){
 #rodando app
 shinyApp(ui,server)
 
-#?selectInput()
+      #?selectInput()
