@@ -2,6 +2,7 @@
 
 library(shiny)
 library(fmsb)
+library(tidyverse)
 
 setwd('/home/lucas/Desktop/app_cancer')
 
@@ -27,12 +28,20 @@ for(i in 2:ncol(hbrasil)){
   hbrasil[,i] <- as.numeric(as.character(hbrasil[,i]))
   
   
-  
 }
 
-#centro-oeste
+#Criando uma lista com um data frame para cada região(para os homens)
 
 
+regioesh=list("cent_o"=data_frame(),"nordh"=data_frame(),"north"=data_frame(),"sudh"=data_frame(),"sulh"=data_frame())
+
+#str(hbrasil)
+#levels(hbrasil$Regiões)
+
+for(i in 1:(nrow(hbrasil)-1)){
+  regioesh[[i]]=hbrasil[i,]
+  regioesh[[i]]=rbind(regioesh[[i]],hbrasil[6,])
+}
 
 
 #definindo interface
