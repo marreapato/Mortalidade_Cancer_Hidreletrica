@@ -14,13 +14,6 @@ hbrasil <- hbrasil[-c(1),-c(14)]
 colnames(hbrasil)<-c("Regiões","Total","00 a 04","05 a 09","10 a 14","15 a 19","20 a 29","30 a 39","40 a 49","50 a 59","60 a 69","70 a 79","80 ou mais")
 hbrasil <- hbrasil[-c(1),]
 
-#cálculo da MOR por região e faixa etaria
-
-#?oddsratio
-#mora na regiao escolhida e tem uma faixa x de anos
-#mora na regiao escolhida e nao tem faixa x anos
-##n mora na regiao escolhida e tem faixa x de anos
-##n mora na regiao escolhida e nao tem faixa x de anos
 
 for(i in 2:ncol(hbrasil)){
   
@@ -42,6 +35,14 @@ for(i in 1:(nrow(hbrasil)-1)){
   regioesh[[i]]=hbrasil[i,]
   regioesh[[i]]=rbind(regioesh[[i]],hbrasil[6,])
 }
+
+#cálculo da MOR por região e faixa etaria
+
+#?oddsratio
+#mora na regiao escolhida e tem uma faixa x de anos
+#mora na regiao escolhida e nao tem faixa x anos
+##n mora na regiao escolhida e tem faixa x de anos
+##n mora na regiao escolhida e nao tem faixa x de anos
 
 
 #definindo interface
