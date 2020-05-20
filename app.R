@@ -38,6 +38,17 @@ for(i in 1:(nrow(hbrasil)-1)){
 
 #cálculo da MOR por região e faixa etaria
 
+mor_regioesh=list()
+
+for(i in 1:5){
+  mor_regioesh[i]=NA
+}
+
+for(i in 1:5){
+  names(mor_regioesh)[i]=names(regioesh)[i]
+}
+
+
 #?oddsratio
 #mora na regiao escolhida e tem uma faixa x de anos
 #mora na regiao escolhida e nao tem faixa x anos
