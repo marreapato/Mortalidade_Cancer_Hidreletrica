@@ -50,11 +50,40 @@ for(i in 1:5){
 
 
 #?oddsratio
-#mora na regiao escolhida e tem uma faixa x de anos
-#mora na regiao escolhida e nao tem faixa x anos
-##n mora na regiao escolhida e tem faixa x de anos
-##n mora na regiao escolhida e nao tem faixa x de anos
+#a=mora na regiao escolhida e tem uma faixa x de anos
+#b=mora na regiao escolhida e nao tem faixa x anos
+##c=n mora na regiao escolhida e tem faixa x de anos
+##d=n mora na regiao escolhida e nao tem faixa x de anos
 
+#calculando para homens em cada regiao do brasil por faixa etaria
+
+#View(regioesh[["cent_o"]])
+faixas=c("00 a 04","05 a 09","10 a 14","15 a 19","20 a 29","30 a 39","40 a 49","50 a 59","60 a 69","70 a 79","80 ou mais")
+
+
+for (j in 1:length(regioesh)) {
+ 
+  for(i in 3:ncol(regioesh[[j]])){
+  
+    a=as.numeric(as.character(regioesh[[j]][1,i]))
+  
+    b=as.numeric(as.character(regioesh[[j]][1,2]))-a
+  
+    c=as.numeric(as.character(regioesh[[j]][2,i]))-a#total menos a
+  
+    d=as.numeric(as.character(regioesh[[j]][2,2]))-(as.numeric(as.character(regioesh[[j]][1,2]))+c)
+  
+  
+    mor_regioesh[[j]][i-2]=list(oddsratio(a,b,c,d,p.calc.by.independence = T,conf.level = 0.95))
+  
+  #salvando os resultados
+  }
+  names(mor_regioesh[[j]])=faixas
+}#calculando a MOR de todas as regioes para os homens em todas faixas etarias
+
+mor_regioesh
+
+#regiao centro oeste feito
 
 #definindo interface
 
