@@ -81,8 +81,6 @@ for (j in 1:length(regioesh)) {
   names(mor_regioesh[[j]])=faixas
 }#calculando a MOR de todas as regioes para os homens em todas faixas etarias
 
-mor_regioesh
-
 #regiao centro oeste feito
 
 #definindo interface
