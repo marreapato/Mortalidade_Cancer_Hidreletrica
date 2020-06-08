@@ -182,9 +182,20 @@ server <- function(input,output){
   output$new_selected_var <- renderText(paste("\n Situada na região",input$reg))
   
   output$mor <- renderText({
-    if (input$reg == 'sul'&&input$sex=='masculino') {
-      return(paste("de 00 a 04 anos:", round(mor_regioesh$cent_o$`00 a 04`$estimate,2),
-                   "<br> de 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2)))
+    if (input$reg == 'centro oeste'&&input$sex=='masculino') {
+      return(paste("De 00 a 04 anos:", round(mor_regioesh$cent_o$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesh$cent_o$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesh$cent_o$`15 a 19`$estimate,2),
+    
+                   "<br> De 20 a 29 anos:", round(mor_regioesh$cent_o$`20 a 29`$estimate,2),
+    
+                   "<br> De 30 a 39 anos:", round(mor_regioesh$cent_o$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesh$cent_o$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesh$cent_o$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesh$cent_o$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesh$cent_o$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesh$cent_o$`80 ou mais`$estimate,2)))
      
       
       
