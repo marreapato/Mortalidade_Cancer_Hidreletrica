@@ -199,6 +199,159 @@ server <- function(input,output){
      
       
       
+    }else if(input$reg == 'sul'&&input$sex=='masculino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesh$sulh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesh$sulh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesh$sulh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesh$sulh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesh$sulh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesh$sulh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesh$sulh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesh$sulh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesh$sulh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesh$sulh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesh$sulh$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'sudeste'&&input$sex=='masculino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesh$sudh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesh$sudh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesh$sudh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesh$sudh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesh$sudh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesh$sudh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesh$sudh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesh$sudh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesh$sudh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesh$sudh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesh$sudh$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'norte'&&input$sex=='masculino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesh$north$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesh$north$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesh$north$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesh$north$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesh$north$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesh$north$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesh$north$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesh$north$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesh$north$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesh$north$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesh$north$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'nordeste'&&input$sex=='masculino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesh$nordh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesh$nordh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesh$nordh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesh$nordh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesh$nordh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesh$nordh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesh$nordh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesh$nordh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesh$nordh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesh$nordh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesh$nordh$`80 ou mais`$estimate,2)))
+      
+      
+      
+    } else if (input$reg == 'centro oeste'&&input$sex=='feminino') {
+      return(paste("De 00 a 04 anos:", round(mor_regioesm$cent_o$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesm$cent_o$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesm$cent_o$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesm$cent_o$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesm$cent_o$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesm$cent_o$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesm$cent_o$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesm$cent_o$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesm$cent_o$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesm$cent_o$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesm$cent_o$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'sul'&&input$sex=='feminino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesm$sulh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesm$sulh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesm$sulh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesm$sulh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesm$sulh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesm$sulh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesm$sulh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesm$sulh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesm$sulh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesm$sulh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesm$sulh$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'sudeste'&&input$sex=='feminino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesm$sudh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesm$sudh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesm$sudh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesm$sudh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesm$sudh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesm$sudh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesm$sudh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesm$sudh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesm$sudh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesm$sudh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesm$sudh$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'norte'&&input$sex=='feminino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesm$north$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesm$north$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesm$north$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesm$north$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesm$north$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesm$north$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesm$north$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesm$north$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesm$north$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesm$north$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesm$north$`80 ou mais`$estimate,2)))
+      
+      
+      
+    }else if(input$reg == 'nordeste'&&input$sex=='feminino'){
+      return(paste("De 00 a 04 anos:", round(mor_regioesm$nordh$`00 a 04`$estimate,2),
+                   "<br> De 05 a 09 anos:", round(mor_regioesm$nordh$`05 a 09`$estimate,2),
+                   "<br> De 10 a 14 anos:", round(mor_regioesm$nordh$`10 a 14`$estimate,2),
+                   "<br> De 15 a 19 anos:", round(mor_regioesm$nordh$`15 a 19`$estimate,2),
+                   
+                   "<br> De 20 a 29 anos:", round(mor_regioesm$nordh$`20 a 29`$estimate,2),
+                   
+                   "<br> De 30 a 39 anos:", round(mor_regioesm$nordh$`30 a 39`$estimate,2),
+                   "<br> De 40 a 49 anos:",round(mor_regioesm$nordh$`40 a 49`$estimate,2),
+                   "<br> De 50 a 59 anos:", round(mor_regioesm$nordh$`50 a 59`$estimate,2),
+                   "<br> De 60 a 69 anos:", round(mor_regioesm$nordh$`60 a 69`$estimate,2),
+                   "<br> De 70 a 79 anos:", round(mor_regioesm$nordh$`70 a 79`$estimate,2),
+                   "<br> De 80 ou mais:", round(mor_regioesm$nordh$`80 ou mais`$estimate,2)))
+      
+      
+      
     }
     
   })
