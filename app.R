@@ -180,9 +180,21 @@ server <- function(input,output){
   
   output$selected_var <- renderText(paste("Você esta analizando a população do sexo",input$sex))
   output$new_selected_var <- renderText(paste("\n Situada na região",input$reg))
+  
+  output$mor <- renderText({
+    if (input$reg == 'sul'&&input$sex=='masculino') {
+      return(paste("de 00 a 04 anos:", round(mor_regioesh$cent_o$`00 a 04`$estimate,2),
+                   "| de 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2)))
+     
+      
+      
+    }
+    
+  })
+  
 
-  output$mor <- renderText(paste("mor= ",round(mor_regioesh$sudh$`00 a 04`$estimate,2)))
-
+  # output$mor <- renderText(paste("mor= ",round(mor_regioesh$cent_o$`00 a 04`$estimate,2)))
+  
 }
 
 #rodando app
