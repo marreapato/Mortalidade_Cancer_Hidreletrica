@@ -168,7 +168,7 @@ ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Bra
                 sidebarLayout(sidebarPanel(helpText(h3("Selecione o sexo da parcela da população brasileira que deseja estudar"))
                                            ,selectInput("sex","Sexo",c("Masculino"="masculino","Feminino"="feminino")),selectInput("reg","Região",c("Norte"="norte","Nordeste"="nordeste","Sudeste"="sudeste","Sul"="sul","Centro Oeste"="centro oeste")))
                               ,mainPanel(h2("MOR",align="center"),
-                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),textOutput("mor")
+                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),htmlOutput("mor")
                               )
                 )
 )
@@ -184,7 +184,7 @@ server <- function(input,output){
   output$mor <- renderText({
     if (input$reg == 'sul'&&input$sex=='masculino') {
       return(paste("de 00 a 04 anos:", round(mor_regioesh$cent_o$`00 a 04`$estimate,2),
-                   "| de 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2)))
+                   "<br> de 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2)))
      
       
       
