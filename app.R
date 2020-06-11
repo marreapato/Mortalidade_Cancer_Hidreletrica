@@ -3,10 +3,11 @@
 library(shiny)
 library(fmsb)
 library(tidyverse)
+library(ggthemes)
 
 setwd('/home/lucas/Desktop/app_cancer')
 
-#Rodando banco dos homens e arrumando
+  #Rodando banco dos homens e arrumando
 
 hbrasil <- read.csv2("hbrasil.csv",header = F)
 
@@ -164,11 +165,15 @@ for (j in 1:length(regioesm)) {
 
 #definindo interface
 
+data=data.frame("Sexo"=c("Masculino","Feminino"),"Total de casos de câncer"=c(hbrasil$Total[6],mbrasil$Total[6]),"Total Sul"=c(hbrasil$Total[5],mbrasil$Total[5]),"Total Sudeste"=c(hbrasil$Total[4],mbrasil$Total[4]),"Total Norte"=c(hbrasil$Total[3],mbrasil$Total[3]),"Total Nordeste"=c(hbrasil$Total[2],mbrasil$Total[2]),"Total Centro oeste"=c(hbrasil$Total[1],mbrasil$Total[1]))
+
 ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Brasil."),
                 sidebarLayout(sidebarPanel(helpText(h3("Selecione o sexo da parcela da população brasileira que deseja estudar"))
                                            ,selectInput("sex","Sexo",c("Masculino"="masculino","Feminino"="feminino")),selectInput("reg","Região",c("Norte"="norte","Nordeste"="nordeste","Sudeste"="sudeste","Sul"="sul","Centro Oeste"="centro oeste")))
                               ,mainPanel(h2("MOR",align="center"),
-                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),htmlOutput("mor")
+                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),plotOutput("myplot"),
+                                         htmlOutput("mor")
+                                         
                               )
                 )
 )
@@ -178,8 +183,14 @@ ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Bra
 server <- function(input,output){
   
   
-  output$selected_var <- renderText(paste("Você esta analizando a população do sexo",input$sex))
-  output$new_selected_var <- renderText(paste("\n Situada na região",input$reg))
+  output$selected_var <- renderText(paste("Você esta analizando as chances de óbito por câncer da população do sexo",input$sex))
+  output$new_selected_var <- renderText(paste("\nRegião:",input$reg))
+  
+  output$myplot <- renderPlot({
+    ggplot(data,aes(data$Sexo,data$Total.de.casos.de.câncer,fill=data$Sexo)) + 
+      geom_col()+labs(x="Sexo",y="Quantidade",fill="Sexo")+scale_fill_tableau()+theme_tufte()})
+  
+  
   
   output$mor <- renderText({
     if (input$reg == 'centro oeste'&&input$sex=='masculino') {
@@ -187,16 +198,16 @@ server <- function(input,output){
                    "<br> De 05 a 09 anos:", round(mor_regioesh$cent_o$`05 a 09`$estimate,2),
                    "<br> De 10 a 14 anos:", round(mor_regioesh$cent_o$`10 a 14`$estimate,2),
                    "<br> De 15 a 19 anos:", round(mor_regioesh$cent_o$`15 a 19`$estimate,2),
-    
+                   
                    "<br> De 20 a 29 anos:", round(mor_regioesh$cent_o$`20 a 29`$estimate,2),
-    
+                   
                    "<br> De 30 a 39 anos:", round(mor_regioesh$cent_o$`30 a 39`$estimate,2),
                    "<br> De 40 a 49 anos:",round(mor_regioesh$cent_o$`40 a 49`$estimate,2),
                    "<br> De 50 a 59 anos:", round(mor_regioesh$cent_o$`50 a 59`$estimate,2),
                    "<br> De 60 a 69 anos:", round(mor_regioesh$cent_o$`60 a 69`$estimate,2),
                    "<br> De 70 a 79 anos:", round(mor_regioesh$cent_o$`70 a 79`$estimate,2),
                    "<br> De 80 ou mais:", round(mor_regioesh$cent_o$`80 ou mais`$estimate,2)))
-     
+      
       
       
     }else if(input$reg == 'sul'&&input$sex=='masculino'){
@@ -356,7 +367,7 @@ server <- function(input,output){
     
   })
   
-
+  
   # output$mor <- renderText(paste("mor= ",round(mor_regioesh$cent_o$`00 a 04`$estimate,2)))
   
 }
@@ -364,4 +375,4 @@ server <- function(input,output){
 #rodando app
 shinyApp(ui,server)
 
-#?selectInput()
+  #?selectInput()
