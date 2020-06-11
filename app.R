@@ -7,7 +7,7 @@ library(ggthemes)
 
 setwd('/home/lucas/Desktop/app_cancer')
 
-  #Rodando banco dos homens e arrumando
+#Rodando banco dos homens e arrumando
 
 hbrasil <- read.csv2("hbrasil.csv",header = F)
 
@@ -171,7 +171,7 @@ ui <- fluidPage(titlePanel("Painel das chances de mortalidade por câncer no Bra
                 sidebarLayout(sidebarPanel(helpText(h3("Selecione o sexo da parcela da população brasileira que deseja estudar"))
                                            ,selectInput("sex","Sexo",c("Masculino"="masculino","Feminino"="feminino")),selectInput("reg","Região",c("Norte"="norte","Nordeste"="nordeste","Sudeste"="sudeste","Sul"="sul","Centro Oeste"="centro oeste")))
                               ,mainPanel(h2("MOR",align="center"),
-                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),plotOutput("myplot"),
+                                         p("Aplicativo shiny realizado para monitorar a MOR por região da população brasileira por câncer(calculada no período entre 1985 até 2018)."),textOutput("selected_var"),textOutput("new_selected_var"),plotOutput("myplot"),textOutput("faixa"),
                                          htmlOutput("mor")
                                          
                               )
@@ -185,12 +185,8 @@ server <- function(input,output){
   
   output$selected_var <- renderText(paste("Você esta analizando as chances de óbito por câncer da população do sexo",input$sex))
   output$new_selected_var <- renderText(paste("\nRegião:",input$reg))
-  
-  output$myplot <- renderPlot({
-    ggplot(data,aes(data$Sexo,data$Total.de.casos.de.câncer,fill=data$Sexo)) + 
-      geom_col()+labs(x="Sexo",y="Quantidade",fill="Sexo")+scale_fill_tableau()+theme_tufte()})
-  
-  
+  output$faixa <- renderText("As chances de óbito por faixa etária são:")
+ 
   
   output$mor <- renderText({
     if (input$reg == 'centro oeste'&&input$sex=='masculino') {
@@ -366,6 +362,10 @@ server <- function(input,output){
     }
     
   })
+  output$myplot <- renderPlot({
+    ggplot(data,aes(data$Sexo,data$Total.de.casos.de.câncer,fill=data$Sexo)) + 
+      geom_col()+labs(title="Total de óbitos registrados pelo INCA no Brasil.",x="Sexo",y="Quantidade",fill="Sexo")+scale_fill_fivethirtyeight()+theme_minimal()})
+  
   
   
   # output$mor <- renderText(paste("mor= ",round(mor_regioesh$cent_o$`00 a 04`$estimate,2)))
@@ -375,4 +375,4 @@ server <- function(input,output){
 #rodando app
 shinyApp(ui,server)
 
-  #?selectInput()
+#?selectInput()
