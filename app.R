@@ -364,7 +364,7 @@ server <- function(input,output){
   })
   output$myplot <- renderPlot({
     ggplot(data,aes(data$Sexo,data$Total.de.casos.de.câncer,fill=data$Sexo)) + 
-      geom_col()+labs(title="Total de óbitos registrados pelo INCA no Brasil.",x="Sexo",y="Quantidade",fill="Sexo")+scale_fill_fivethirtyeight()+theme_minimal()})
+      geom_col()+labs(title="Total de óbitos registrados pelo INCA no Brasil.",x="Sexo",y="Quantidade",fill="Sexo")+scale_fill_manual(values = c("#33FF83","#F5FF60"))+theme_minimal()})
   
   
   
