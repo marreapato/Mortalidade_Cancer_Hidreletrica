@@ -1,0 +1,12 @@
+name: br_cancer
+title: br_cancer
+username:
+account: marreapato
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2448168
+bundleId: 3279178
+url: https://marreapato.shinyapps.io/br_cancer/
+when: 1592339617.37608
+asMultiple: FALSE
+asStatic: FALSE
