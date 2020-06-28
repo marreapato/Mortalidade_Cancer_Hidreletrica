@@ -1,5 +1,5 @@
 # Mortalidade_Cancer_Hidreletrica
-Projeto com apoio da FAPESB-Fundação de Amparo à Pesquisa do Estado da Bahia
+Projeto com apoio da FAPESB-Fundação de Amparo à Pesquisa do Estado da Bahia, para pesquisa sobre a mortalidade de câncer em trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011.
  
 - [Dados para óbitos de câncer da população brasileira](https://www.inca.gov.br/MortalidadeWeb/pages/Modelo10/consultar.xhtml#panelResultado)
 - [Video-Pôster](https://www.youtube.com/watch?v=uItRgQl-AiA&list=PLSIGD7-rHf2UmRgQjety60OjYyEGDurf9&index=74)
