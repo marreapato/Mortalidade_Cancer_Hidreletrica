@@ -2,23 +2,26 @@
 title: Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia
   hidrelétrica no período de 1985 a 2011.
 author:
-- address:
-  - line 1
-  - line 2
-  affiliation: Affiliation
-  email: author1@work
-  name: Lucas Rabelo
-- address:
-  - line 1
-  - line 2
-  affiliation: Affiliation
-  email: author2@work
-  name: Gecynalda Gomes
-output:
-  word_document: default
-  rticles::rjournal_article: default
+  - Lucas Rabelo:
+      email: lucasrabeloufba@gmail.com
+      institute: [UFBA, estatistica]
+      correspondence: true
+  - name: Gecynalda Gomes
+    institute: UFBA
+  - name: Andre
+    institute: med
+  - name: Suerda
+    institute: astro
+institute:
+  - astro: Instituto de Astronomía, Geofísica e Ciências Atmosféricas, Universidade de São Paulo
+  - med: Faculdade de Medicina, Universidade de São Paulo
+date: "1 October 2018"
+output: 
+  word_document:
+    pandoc_args:
+      - '--lua-filter=scholarly-metadata.lua'
+      - '--lua-filter=author-info-blocks.lua'
 ---
-
 
 
 
