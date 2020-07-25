@@ -1,28 +1,30 @@
 ---
-title: Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011.
+title: Estudo da mortalidade por neoplasias malignas de trabalhadores de uma companhia
+  hidrelétrica no período de 1985 a 2011.
 author:
-  - name: Lucas Rabelo
-    affiliation: Affiliation
-    address:
-    - line 1
-    - line 2
-    email:  author1@work
-  - name: Gecynalda Gomes
-    affiliation: Affiliation
-    address:
-    - line 1
-    - line 2
-    email:  author2@work
-abstract: >
- After a paper published in 1979 by Wertheimer and Leeper showed a positive association between extremely low-frequency magnetic fields (elf-mf) and infant leukemia, studies investigating risks between exposure to elf-mf and the development of diseases, subsequently caused the classification of this kind of exposure as 2B (Possibly carcinogenic) by IARC. This study aims to analyze deaths by malignant neoplasm and the risks occupational exposure to elf-mf may have as a co-carcinogenic or carcinogenic factor in a hydroelectric power facility located in Brazil. A database of 1,253 deceased workers from 1985 until 2011, where 249 were identified as exposed to electricity and 995 weren't , was used to evaluate the MOR, which was calculated accordingly to the exposure of those who died from malignant neoplasm, a bootstrap method was used to lower the amplitude of the confidence intervals and bring more reliable estimates to the MOR, a database of those who died of cancer in the country was gathered from a Brazilian information system maintained by INCA to compare the MOR regarding sex and age within the company and the country. When using the traditional method to calculate the MOR, an elevated value was found for esophagus cancer(MOR=5.50; CI=1.06-28.33; P=0.0235), whereas in the bootstrap method the MOR was high for the following cancer types: Esophagus(MORBoot=6.73; CI=1.74- 16.67; P<0.0001), Non Hodgkin Lymphoma(MORBoot=6.03; CI=2.62-10.81; P<0.0001), Bladder(MORBoot=6.03; CI=2.62-10.81; P<0.0001) and Bone(MORBoot=3.95; CI=2.62-5.26; P<0.0001). Some limitations of the study, such as lack of information about the lifestyle of the workers and the small number of cases, make more difficult to consider exposure to elf-mf as a carcinogenic or co-carcinogenic factor, but despite the limitations in this study, the elevated MORs and BootMORs should be taken seriously requiring further research and better-funded studies in the area.
-output: rticles::rjournal_article
+- address:
+  - line 1
+  - line 2
+  affiliation: Affiliation
+  email: author1@work
+  name: Lucas Rabelo
+- address:
+  - line 1
+  - line 2
+  affiliation: Affiliation
+  email: author2@work
+  name: Gecynalda Gomes
+output:
+  word_document: default
+  rticles::rjournal_article: default
+abstract: |
+  After a paper published in 1979 by Wertheimer and Leeper showed a positive association between extremely low-frequency magnetic fields (elf-mf) and infant leukemia, studies investigating risks between exposure to elf-mf and the development of diseases, subsequently caused the classification of this kind of exposure as 2B (Possibly carcinogenic) by IARC. This study aims to analyze deaths by malignant neoplasm and the risks occupational exposure to elf-mf may have as a co-carcinogenic or carcinogenic factor in a hydroelectric power facility located in Brazil. A database of 1,253 deceased workers from 1985 until 2011, where 249 were identified as exposed to electricity and 995 weren't , was used to evaluate the MOR, which was calculated accordingly to the exposure of those who died from malignant neoplasm, a bootstrap method was used to lower the amplitude of the confidence intervals and bring more reliable estimates to the MOR, a database of those who died of cancer in the country was gathered from a Brazilian information system maintained by INCA to compare the MOR regarding sex and age within the company and the country. When using the traditional method to calculate the MOR, an elevated value was found for esophagus cancer(MOR=5.50; CI=1.06-28.33; P=0.0235), whereas in the bootstrap method the MOR was high for the following cancer types: Esophagus(MORBoot=6.73; CI=1.74- 16.67; P<0.0001), Non Hodgkin Lymphoma(MORBoot=6.03; CI=2.62-10.81; P<0.0001), Bladder(MORBoot=6.03; CI=2.62-10.81; P<0.0001) and Bone(MORBoot=3.95; CI=2.62-5.26; P<0.0001). Some limitations of the study, such as lack of information about the lifestyle of the workers and the small number of cases, make more difficult to consider exposure to elf-mf as a carcinogenic or co-carcinogenic factor, but despite the limitations in this study, the elevated MORs and BootMORs should be taken seriously requiring further research and better-funded studies in the area.
 ---
 ### Keywords: *Hydroelectric, Cancer, Mortality Odds Ratio, Bootstrap, Statistic.*
 
 
 
 ```{r setup, include=FALSE}
-
 library(rticles)
 
 ```
@@ -47,12 +49,6 @@ library(rticles)
 # Metodologia
 
  O banco de dados consiste de 1.253 observações coletadas no período de 1985 até 2011, referentes ao diagnóstico de óbito em empregados, de uma companhia hidrelétrica brasileira, a qual por questões de privacidade não será identificada, dentre os empregados 1.130 foram do sexo masculino e 123 do feminino. O foco do estudo no entanto, está em um total de 254 indivíduos(39 do sexo feminino e 215 do masculino), em que a causa principal de falecimento se deu por neoplasia maligna (distribuição dos casos de câncer presente em **Figura 1**), dos quais 209 foram classificados como não expostos e um total de 42 como afetados pela exposição, em toda a hidrelétrica 241 trabalhadores foram classificados como expostos em contrapartida a 995 não expostos. Devido a falta de informações sobre o estilo de vida dos trabalhadores e a dificuldade para medir a exposição $\!\!^4$ \ $\!\!^5$ \ $\!\!^1$ $\!\!^3$, é comum que estudos utilizem as ocupações $\!\!^5$ para realizar a classificação referente a exposição aos CEM, assim como nesse estudo em que os empregados foram classificados de forma binária, quanto a exposição.
-
-
-
- \ ![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\artigos\Diagnosticocancer.jpeg"){height=400px}
-     
-  **Figura 1**-Câncer nos empregados da hidrelétrica
    
      
  Para verificar o comportamento do óbito por neoplasia e exposição a eletricidade, foi calculada a MOR $\!\!^5$ \ $\!\!^6$ (Mortality Odds Ratio), a qual parafraseando Miettinen e Wang(1980, p.146, tradução nossa)" é obtida pela razão das chances de exposição pela causa de óbito", como o software R(versão 3.6.1) foi utilizado para o cálculo da citada estatística, vale ressaltar que para calcular a mesma foi usada a função que calcula as odds ratios, presente na biblioteca FMSB $\!\!^1\!^2$, o nível de confiança a ser considerado neste artigo é de 95%.
@@ -150,27 +146,26 @@ em: 08/12/2019.
 
 # Apêndice 1
 
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela_boot_trad_unificada (1).pdf"){height=800px}
-
-# Apêndice 2
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\tabela_grpA_C (3).pdf"){height=1200px,width=2000px}
-
-# Apêndice 3
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\fem_cancer (3).pdf"){height=800px}
-
-# Apêndice 4
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\Tabela-mor-masc1.pdf"){height=800px}
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\2mor.pdf"){height=800px}
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\3mor.pdf"){height=800px}
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\4mor.pdf"){height=800px}
-
-![]("C:\Users\User\Desktop\pibic_NAOEXCLUIR\Mortalidade Hidreletrica\5mor.pdf"){height=800px}
+![](C:\Users\User\Desktop\art_word\tab1.jpg){height=800px}
 
 
+![](C:\Users\User\Desktop\art_word\tab2.jpg){height=1200px,width=2000px}
 
+
+![](C:\Users\User\Desktop\art_word\tab3.jpg){height=800px}
+
+
+![](C:\Users\User\Desktop\art_word\tab41.jpg){height=800px}
+
+![](C:\Users\User\Desktop\art_word\tab42.jpg){height=800px}
+
+![](C:\Users\User\Desktop\art_word\tab43.jpg){height=800px}
+
+![](C:\Users\User\Desktop\art_word\tab44.jpg){height=800px}
+
+![](C:\Users\User\Desktop\art_word\tab45.jpg){height=800px}
+
+
+ \ ![](C:\Users\User\Desktop\art_word\cancer.jpeg){height=400px}
+     
+  **Figura 1**-Câncer nos empregados da hidrelétrica
