@@ -98,7 +98,7 @@ for(m in 1:length(cancercsele$Var1)){
   
   d=sum(cancernel$Freq)-k#sem eletricidade e com saude
   
-  #################
+#################
   
   odd=oddsratio(a,k,c,d,p.calc.by.independence = TRUE
   #funcao da biblioteca FMSB para calcular odds ratios
@@ -106,23 +106,23 @@ for(m in 1:length(cancercsele$Var1)){
   odd$estimate#MOR valor
   
 ######################################
+
   #Bootstrap
   
-  #A= expostos a eletricidade e sofrem de uma condição
+  #A=expostos a eletricidade e sofrem de uma condição
   
-  #B=não expostos a eletricidade e sofrem de uma condição
+  #K=não expostos a eletricidade e sofrem de uma condição
   
   #ao variar apenas A e B,as outras variáveis necessárias para o calculo da MOR também variam
   
   #bootstrapping em A
   
-  set.seed(112358)
   
   n <-1#numero de linhas
   
-  b <- 10000#numero de amostras bootstrap
+  b <- 10000#número de amostras bootstrap
   
-  variable <-a #numero de casos
+  variable <-a #número de casos
   
   bootstrapsamples <- matrix(sample(variable,size=n*b,replace = TRUE),ncol =b ,nrow =n )
   #cada coluna corresponde a uma amostra bootstrap
@@ -133,22 +133,15 @@ for(m in 1:length(cancercsele$Var1)){
   
   odd[[3]]#onde o valor original da MOR esta localizado
   
-  #bootstrapping no valor de B
+  #bootstrapping no valor de K
   
   n <-1
   
   b <- 10000
   
-  variable <-k #k=B
+  variable <-k
   
   bootstrapsamples1 <- matrix(sample(variable,size=1*b,replace = TRUE),ncol =b ,nrow =1 )
-  
-
-  
-  dim(bootstrapsamples1)
-  
-  
-  odd[[3]
 
   
   bootlist=list(rep(0,b))#lista criada para salvar os valores da funcao da MOR
