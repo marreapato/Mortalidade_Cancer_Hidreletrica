@@ -78,7 +78,7 @@ for(i in 1:length(cancercsele$Var1)){
 
 #K=não expostos a eletricidade e sofrem de uma condição
 
-#ao variar apenas A e B,  as outras variáveis necessárias para o calculo da MOR também variam
+#ao variar apenas A e K,  as outras variáveis necessárias para o calculo da MOR também variam
 
 for(m in 1:length(cancercsele$Var1)){
   cancername <- cancercsele$Var1[m]
@@ -90,29 +90,29 @@ for(m in 1:length(cancercsele$Var1)){
   
   #calculo da MOR
   
-  a=newdata$Freq[newdata$Var1==1]#eletricidade e sem saude a.k.a A
+  a=newdata$Freq[newdata$Var1==1]#eletricidade e sem saude A
   
   c=sum(cancercsele$Freq)-a#eletricidade e com saude
   
-  k=newdata$cancersemelet[newdata$Var1==1]#sem eletricidade e sem saude a.k.a B
+  k=newdata$cancersemelet[newdata$Var1==1]#sem eletricidade e sem saude
   
   d=sum(cancernel$Freq)-k#sem eletricidade e com saude
   
-  #####################################################################################################
+  #################
   
-  odd=oddsratio(a,k,c,d,p.calc.by.independence = TRUE)
-  #funcao da biblioteca FMSB
+  odd=oddsratio(a,k,c,d,p.calc.by.independence = TRUE
+  #funcao da biblioteca FMSB para calcular odds ratios
   
   odd$estimate#MOR valor
   
-###################################################################################################################################
+######################################
   #Bootstrap
   
   #A= expostos a eletricidade e sofrem de uma condição
   
   #B=não expostos a eletricidade e sofrem de uma condição
   
-  #ao variar apenas A e B,  as outras variáveis necessárias para o calculo da MOR também variam
+  #ao variar apenas A e B,as outras variáveis necessárias para o calculo da MOR também variam
   
   #bootstrapping em A
   
@@ -125,7 +125,7 @@ for(m in 1:length(cancercsele$Var1)){
   variable <-a #numero de casos
   
   bootstrapsamples <- matrix(sample(variable,size=n*b,replace = TRUE),ncol =b ,nrow =n )
-  #cada coluna e uma amostra bootstrap
+  #cada coluna corresponde a uma amostra bootstrap
   
   #checando as dimensoes
   
