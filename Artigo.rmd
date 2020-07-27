@@ -54,8 +54,132 @@ O banco de dados consiste de 1.253 observações coletadas no período de 1985 a
 
   
 Devido a alta amplitude dos intervalos de confiança ao calcular a MOR da maneira em que a medida é tradicionalmente calculada, em virtude do baixo número de casos em indivíduos expostos a eletricidade classificados com neoplasia maligna, para diminuir a largura dos intervalos foi aplicado um método *bootstrap*, inspirado no proposto por Itskovich e Roudebush$\!\!^1$$\!\!^4$ em um estudo sobre métodos de reamostragem em estudos de mortalidade, o qual apesar de ter sido identificado por tais autores como não muito eficiente apresentou resultados interessantes a ter sua aplicação adaptada para este estudo. O método foi aplicado com 10.000 reamostragens, considerando grupo A e todos os indivíduos que faleceram por câncer e não possuiam contato com a eletricidade independentemente da periculosidade do trabalho realizado. 
+
  
  Na tentativa de identificar anomalias nas chances de óbito da hidrelétrica, houve a comparação entre a MOR da hidrelétrica e da população brasileira que foi a óbito por neoplasia maligna no período de 1985 até 2012, período este utilizado devido a leve presença de trabalhadores que tiveram o óbito registrado em tal ano, os dados para o Brasil estão disponibilizados na base de dados do INCA (Instituto Nacional do Câncer)$\!\!^1$ $\!\!^1\!^1$,a sigla MORH foi utilizada para se referir a MOR da hidrelétrica e MORB a da parcela da população brasileira conveniente para comparação, a análise comparativa foi feita considerando o sexo e as faixas etárias de óbito dos trabalhadores, a MORH foi considerada elevada em relação a MORB se o IC (Intervalo de Confiança) da MORB não estivesse contido no da MORH.
+ 
+#### Algoritmos e implementação
+
+ O cálculo da MOR e o método *bootstrap* foram aplicados seguindo os seguintes passos...
+
+
+```
+newdata=cancercsele#tabela referente aos tipos de câncer com e sem exposição a eletricidade
+
+results=NA
+
+for(i in 1:length(cancercsele$Var1)){
+  results[i]=0
+}#lista de resultados
+
+#Calculando a mor
+
+#A=expostos a eletricidade e sofrem de uma condição
+
+#K=não expostos a eletricidade e sofrem de uma condição
+
+#ao variar apenas A e B,  as outras variáveis necessárias para o calculo da MOR também variam
+
+for(m in 1:length(cancercsele$Var1)){
+  cancername <- cancercsele$Var1[m]
+  
+  newdata$Var1 <- if_else(cancercsele$Var1==cancername,1,0)
+  #o valor que possui o cancer passa a ser 1
+  
+  newdata
+  
+  #calculo da MOR
+  
+  a=newdata$Freq[newdata$Var1==1]#eletricidade e sem saude a.k.a A
+  
+  c=sum(cancercsele$Freq)-a#eletricidade e com saude
+  
+  k=newdata$cancersemelet[newdata$Var1==1]#sem eletricidade e sem saude a.k.a B
+  
+  d=sum(cancernel$Freq)-k#sem eletricidade e com saude
+  
+  #####################################################################################################
+  
+  odd=oddsratio(a,k,c,d,p.calc.by.independence = TRUE)
+  #funcao da biblioteca FMSB
+  
+  odd$estimate#MOR valor
+  
+###################################################################################################################################
+  #Bootstrap
+  
+  #A= expostos a eletricidade e sofrem de uma condição
+  
+  #B=não expostos a eletricidade e sofrem de uma condição
+  
+  #ao variar apenas A e B,  as outras variáveis necessárias para o calculo da MOR também variam
+  
+  #bootstrapping em A
+  
+  set.seed(112358)
+  
+  n <-1#numero de linhas
+  
+  b <- 10000#numero de amostras bootstrap
+  
+  variable <-a #numero de casos
+  
+  bootstrapsamples <- matrix(sample(variable,size=n*b,replace = TRUE),ncol =b ,nrow =n )
+  #cada coluna e uma amostra bootstrap
+  
+  #checando as dimensoes
+  
+  dim(bootstrapsamples)
+  
+  odd[[3]]#onde o valor original da MOR esta localizado
+  
+  #bootstrapping no valor de B
+  
+  n <-1
+  
+  b <- 10000
+  
+  variable <-k #k=B
+  
+  bootstrapsamples1 <- matrix(sample(variable,size=1*b,replace = TRUE),ncol =b ,nrow =1 )
+  
+
+  
+  dim(bootstrapsamples1)
+  
+  
+  odd[[3]
+
+  
+  bootlist=list(rep(0,b))#lista criada para salvar os valores da funcao da MOR
+  
+  for(i in 1:b){
+    c=sum(cancercsele$Freq)-bootstrapsamples[1,i]
+    d=sum(cancernel$Freq)-bootstrapsamples1[1,i]
+    
+    bootlist[[i]]=oddsratio(bootstrapsamples[1,i],bootstrapsamples1[1,i],c,d,p.calc.by.independence = TRUE)
+    
+  }#salvando listas em uma lista
+  
+  
+  morboot=rep(0,b)
+  #lista para salvar apenas os valores da MORBoot
+  
+  for(i in 1:b){
+    morboot[i]=bootlist[[i]]$estimate
+  }
+  
+  results[m]=list(c("conf"=round(quantile(morboot,c(0.025,0.975)),4),"MOR"=mean(morboot),"PVALUE"=mean((round(morboot,0)==1))))#confidence interval boot 95%
+  
+}
+
+names(results)=cancercsele$Var1
+
+print("cheque a lista chamada results")
+
+###############################################################################################
+
+```
 
 # Resultados
 
