@@ -60,8 +60,7 @@ Devido a alta amplitude dos intervalos de confiança ao calcular a MOR da maneir
  
 #### Algoritmos e implementação
 
- O cálculo da MOR e o método *bootstrap* foram aplicados seguindo os seguintes passos...
-
+ Para o cálculo da MOR e o método *bootstrap*, um banco de dados derivado do banco original foi construído para conter respectivamente em suas colunas apenas os casos de câncer em trabalhadores que foram expostos a eletricidade e os que não sofreram com tal exposição. Após a criação de uma lista para guardar os resultados do cálculo, uma estrutura de repetição *for* foi utilizada para automatizar o cálculo e a realização do método *bootstrap* por tipo de câncer.
 
 ```
 newdata=cancercsele#tabela referente aos tipos de câncer com e sem exposição a eletricidade
@@ -70,7 +69,7 @@ results=NA
 
 for(i in 1:length(cancercsele$Var1)){
   results[i]=0
-}#lista de resultados
+}#lista para guardar os resultados
 
 #Calculando a mor
 
@@ -78,47 +77,38 @@ for(i in 1:length(cancercsele$Var1)){
 
 #K=não expostos a eletricidade e sofrem de uma condição
 
-#ao variar apenas A e K,  as outras variáveis necessárias para o calculo da MOR também variam
+#ao variar apenas A e K, as outras variáveis necessárias para o calculo da MOR também variam
 
 for(m in 1:length(cancercsele$Var1)){
   cancername <- cancercsele$Var1[m]
   
   newdata$Var1 <- if_else(cancercsele$Var1==cancername,1,0)
-  #o valor que possui o cancer passa a ser 1
+  #o valor que possui o câncer de interesse passa a ser 1
   
-  newdata
+############
   
-  #calculo da MOR
+  #exemplificação do cálculo da MOR
   
-  a=newdata$Freq[newdata$Var1==1]#eletricidade e sem saude A
+  a=newdata$Freq[newdata$Var1==1]#exposição a eletricidade e sem saúde
   
-  c=sum(cancercsele$Freq)-a#eletricidade e com saude
+  c=sum(cancercsele$Freq)-a#exposição a eletricidade e com saúde
   
-  k=newdata$cancersemelet[newdata$Var1==1]#sem eletricidade e sem saude
+  k=newdata$cancersemelet[newdata$Var1==1]#sem exposição a eletricidade e sem saúde
   
-  d=sum(cancernel$Freq)-k#sem eletricidade e com saude
-  
-#################
+  d=sum(cancernel$Freq)-k#sem exposição a eletricidade e com saúde(cancernel foi utilizado previamente para extrair todos os casos de exposição a eletricidade que não sofreram óbito de câncer)
   
   odd=oddsratio(a,k,c,d,p.calc.by.independence = TRUE
   #funcao da biblioteca FMSB para calcular odds ratios
   
   odd$estimate#MOR valor
   
-######################################
+############
 
   #Bootstrap
-  
-  #A=expostos a eletricidade e sofrem de uma condição
-  
-  #K=não expostos a eletricidade e sofrem de uma condição
-  
-  #ao variar apenas A e B,as outras variáveis necessárias para o calculo da MOR também variam
-  
+
   #bootstrapping em A
   
-  
-  n <-1#numero de linhas
+  n <-1#número de linhas
   
   b <- 10000#número de amostras bootstrap
   
@@ -126,13 +116,7 @@ for(m in 1:length(cancercsele$Var1)){
   
   bootstrapsamples <- matrix(sample(variable,size=n*b,replace = TRUE),ncol =b ,nrow =n )
   #cada coluna corresponde a uma amostra bootstrap
-  
-  #checando as dimensoes
-  
-  dim(bootstrapsamples)
-  
-  odd[[3]]#onde o valor original da MOR esta localizado
-  
+
   #bootstrapping no valor de K
   
   n <-1
@@ -144,15 +128,18 @@ for(m in 1:length(cancercsele$Var1)){
   bootstrapsamples1 <- matrix(sample(variable,size=1*b,replace = TRUE),ncol =b ,nrow =1 )
 
   
-  bootlist=list(rep(0,b))#lista criada para salvar os valores da funcao da MOR
+  bootlist=list(rep(0,b))#lista criada para salvar os valores da função da MOR
   
   for(i in 1:b){
+  
+  #cálculo bootstrap nas variáveis c e d
+  
     c=sum(cancercsele$Freq)-bootstrapsamples[1,i]
     d=sum(cancernel$Freq)-bootstrapsamples1[1,i]
     
     bootlist[[i]]=oddsratio(bootstrapsamples[1,i],bootstrapsamples1[1,i],c,d,p.calc.by.independence = TRUE)
     
-  }#salvando listas em uma lista
+  }#salvando listas em uma lista(o output da função oddsratio é uma lista)
   
   
   morboot=rep(0,b)
@@ -162,18 +149,15 @@ for(m in 1:length(cancercsele$Var1)){
     morboot[i]=bootlist[[i]]$estimate
   }
   
-  results[m]=list(c("conf"=round(quantile(morboot,c(0.025,0.975)),4),"MOR"=mean(morboot),"PVALUE"=mean((round(morboot,0)==1))))#confidence interval boot 95%
+  results[m]=list(c("conf"=round(quantile(morboot,c(0.025,0.975)),4),"MOR"=mean(morboot),"PVALUE"=mean((round(morboot,0)==1))))#morboot com intervalo de confiança boot 95%
   
 }
 
 names(results)=cancercsele$Var1
 
-print("cheque a lista chamada results")
-
-###############################################################################################
+##############
 
 ```
-
 # Resultados
 
  No método tradicional **(Apêndice-Tabela 1)**, aplicado para o grupo A e dos trabalhadores falecidos por neoplasia sem contato com a eletricidade, apenas foi encontrada uma elevada chance de óbito para o câncer de esôfago *(MOR=5,50; IC=1,06-28,33; P=0,0235)*, enquanto no método *bootstrap* **(Apêndice-Tabela 1)**  a elevada chance de óbito se manteve para o tal *(MORBoot=6,73; IC=1,74- 16,67; P<0,0001)*, houve também identificação de altas chances neste método para as neoplasias de bexiga *(MORBoot=6,03; IC=2,62-10,81; P<0,0001)*, linfoma não hodgkin *(MORBoot=6,03; IC=2,62-10,81; P<0,0001)* e osso *(MORBoot=3,95; IC=2,62-5,26; P<0,0001)*.
