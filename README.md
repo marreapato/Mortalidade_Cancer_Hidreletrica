@@ -6,3 +6,4 @@ Projeto com apoio da FAPESB-Fundação de Amparo à Pesquisa do Estado da Bahia,
 - [Painel das chances de óbito por câncer pelo Brasil-Shiny](https://marreapato.shinyapps.io/br_cancer/?_ga=2.214012119.1755552520.1591999142-899209179.1591910754)
 
  O banco de dados referente ao diagnóstico de óbito da hidrelétrica teve suas informações confidenciais(nome da empresa) omitidas, bem como foi alterado criando um banco fictício, e pode ser acessado em [novmort.ods](https://github.com/marreapato/Mortalidade_Cancer_Hidreletrica/blob/master/novmort.ods)
+- [Método *bootstrap*](https://raw.githubusercontent.com/marreapato/Mortalidade_Cancer_Hidreletrica/master/Metodo_Bootstrap.r)
