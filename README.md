@@ -1,6 +1,6 @@
 # Mortalidade_Cancer_Hidreletrica
 
-![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white)
+![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white) 	![Windows 10](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 Projeto com apoio da FAPESB-Fundação de Amparo à Pesquisa do Estado da Bahia, para pesquisa sobre a mortalidade de câncer em trabalhadores de uma companhia hidrelétrica no período de 1985 a 2011.
  
